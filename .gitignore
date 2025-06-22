@@ -1,0 +1,22 @@
+# Ignore IntelliJ project files
+.idea/
+*.iml
+
+# Ignore compiled Java classes
+target/
+*.class
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore test output
+test-output/
+
+# Maven-specific
+dependency-reduced-pom.xml
+release.properties
