@@ -38,5 +38,4 @@ public class FlipkartTest extends BaseTest {
         Assert.assertEquals(cartPrice, productPrice, "❌ Price mismatch!");
 
     }
-
 }
