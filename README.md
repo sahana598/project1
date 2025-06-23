@@ -13,8 +13,6 @@ This automation framework built using **Java, Selenium WebDriver, TestNG**, and 
 
 ---
 
-## 🛠️ Setup Instructions (From Scratch)
-
 ### ✅ 1. Install JDK (Java 17)
 
 - Download JDK:  
