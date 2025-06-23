@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 
 public class FlipkartTest extends BaseTest {
 
-    @Test
-    public void flipkartFlowWithPOM() throws InterruptedException {
+    @Test(alwaysRun = true,description = " Verify the price and name of the item in the checkout page matches with the one we had before adding the item.")
+    public void verifyTheFlipcartPage() throws InterruptedException {
         driver.get("https://www.flipkart.com/");
 
         FlipkartPage flipkart = new FlipkartPage(driver);
@@ -18,24 +18,20 @@ public class FlipkartTest extends BaseTest {
         flipkart.sortByLowToHigh();
         flipkart.selectFirstItem();
         flipkart.switchToNewTab();
-
         String productName = flipkart.getProductName();
         String productPrice = flipkart.getProductPrice();
-
         flipkart.selectSizeAndAddToCart();
         flipkart.goToCart();
         String cartName = flipkart.getCartItemName();
         String cartPrice = flipkart.getCartItemPrice();
-
         System.out.println("Product name before adding to cart: " + productName);
         System.out.println("Product price before adding to cart: " + productPrice);
         System.out.println("Product name in cart: " + cartName);
         System.out.println("Product price in cart: " + cartPrice);
         Assert.assertTrue(
                 cartName != null && productName != null && cartName.toLowerCase().contains(productName.toLowerCase()),
-                "❌ Item name mismatch! Expected name to contain: " + productName + " but got: " + cartName
+                " Item name mismatch! Expected name to contain: " + productName + " but got: " + cartName
         );
-        Assert.assertEquals(cartPrice, productPrice, "❌ Price mismatch!");
-
+        Assert.assertEquals(cartPrice, productPrice, " Price mismatch!");
     }
 }

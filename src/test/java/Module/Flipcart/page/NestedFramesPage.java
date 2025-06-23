@@ -93,11 +93,11 @@ public class NestedFramesPage {
                 WebElement heading = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("sampleHeading")));
 
                 String text = heading.getText();
-                System.out.println("✅ New window heading text: " + text);
+                System.out.println("New window heading text: " + text);
 
                 // Optional assertion
                 if (!text.contains("This is a sample page")) {
-                    throw new RuntimeException("❌ Unexpected text in new window");
+                    throw new RuntimeException("Unexpected text in new window");
                 }
 
                 driver.close(); // Close new tab/window
